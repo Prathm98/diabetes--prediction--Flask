@@ -3,32 +3,41 @@
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ML API</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
- <div class="login">
-	<h1>Predict Diabetes</h1>
+ <div class="container">
+    <div class="row">
+	<div class="col-md-4 col-lg-4 col-xs-2"></div>
+	<div class="col-md-4 col-lg-4 col-xs-8">
+ 	    <h1>Predict Diabetes</h1>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="Experience" placeholder="Glucose" required="required" />
-        <input type="text" name="test_score" placeholder="Blood Pressure" required="required" />
-		<input type="text" name="interview_score" placeholder="Skin Thickness" required="required" />
-	<input type="text" name = "Insulin" placeholder = "Insulin" required = "required" /> 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-    </form>
-
+	     <!-- Main Input For Receiving Query to our ML -->
+	    <form action="{{ url_for('predict')}}"method="post">
+		<input class="form-control" type="text" name="Experience" placeholder="Glucose" required="required" />
+		<input class="form-control" type="text" name="test_score" placeholder="Blood Pressure" required="required" />
+		<input class="form-control" type="text" name="interview_score" placeholder="Skin Thickness" required="required" />
+		<input class="form-control" type="text" name = "Insulin" placeholder = "Insulin" required = "required" /> 
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+	    </form>
+          </div>
+     <div class="col-md-4 col-lg-4 col-xs-2"></div>
    <br>
    <br>
    {{ prediction_text }}
-
+     
+     </div>	
  </div>
 
 
