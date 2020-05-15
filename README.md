@@ -2,4 +2,4 @@
 
 
 Live Demo
-https://diabetes--predictor.herokuapp.com/predict
+https://diabetes--predictor.herokuapp.com
